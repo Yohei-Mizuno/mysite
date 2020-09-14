@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "627ef89f247ecee27e9ef0dabe116108d09c47abf171c900a8817befa64f9dd2"
+            "sha256": "d70effac96bb5816919192af1b5aab77074bc4dc1e3f66f91e27e76619c7b102"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,6 +38,14 @@
                 "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
             ],
             "version": "==2020.1"
+        },
+        "question": {
+            "hashes": [
+                "sha256:3c0265f95175b1e745ba01c49974103406f2ad50a8be902b1b16642340da8422",
+                "sha256:bec7210631ad3d3efe5cc589fdf1335a62296cefee42eb5b6f8ff5126744a896"
+            ],
+            "index": "pypi",
+            "version": "==0.1"
         },
         "sqlparse": {
             "hashes": [
