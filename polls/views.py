@@ -1,10 +1,9 @@
-# Create your views here.
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from polls.models import Choice, Question
+from .models import Choice, Question
 
 
 class IndexView(generic.ListView):
@@ -12,7 +11,6 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
-        """Return the last five published questions."""
         return Question.objects.order_by('-pub_date')[:5]
 
 
@@ -33,10 +31,9 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(request, 'polls/detail.html', {
             'question': question,
-            'error message': "You didn't select a choice."
+            'error_message': "You didn't select a choice.",
         })
     else:
         selected_choice.votes += 1
         selected_choice.save()
-    return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
